@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ez-vision"
+version = "1.0.0"
+authors = [
+    {name = "CiaranMcAleer", email = "72049678+CiaranMcAleer@users.noreply.github.com"},
+]
+description = "Computer Vision Made Simple - Train powerful image recognition models in just a few lines of code"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education", 
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+    "tensorflow>=2.12.0",
+    "numpy>=1.21.0",
+    "matplotlib>=3.5.0",
+    "scikit-learn>=1.0.0",
+    "Pillow>=8.3.0",
+]
+keywords = ["computer vision", "machine learning", "deep learning", "image classification", "ai", "tensorflow", "beginner-friendly"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "black>=21.0", 
+    "flake8>=3.8",
+    "twine>=3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/ez-vision"
+"Bug Reports" = "https://github.com/yourusername/ez-vision/issues"
+"Source" = "https://github.com/yourusername/ez-vision"
+Documentation = "https://github.com/yourusername/ez-vision#readme"
+
+[tool.setuptools]
+py-modules = ["ez_vision", "nn_utils"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ez_vision*", "nn_utils*"]
+exclude = ["tests*", "examples*"]

@@ -114,8 +114,8 @@ def train_neural_network(
         print("\nTraining complete.")
 
         # Save the trained model into the specified folder.
-        # TensorFlow will create a SavedModel folder if you use model.save(...) with a directory path.
-        saved_model_path = os.path.join(output_path, "trained_model")
+        # Use .keras extension for proper Keras model format
+        saved_model_path = os.path.join(output_path, "trained_model.keras")
         model.save(saved_model_path)
 
         print(f"Model saved to {saved_model_path}")
@@ -142,7 +142,7 @@ def use_model(input_list):
     A Python list containing the model's predictions.
     \"""
     # Load the trained model
-    model_path = os.path.join(os.path.dirname(__file__), "trained_model")
+    model_path = os.path.join(os.path.dirname(__file__), "trained_model.keras")
     model = tf.keras.models.load_model(model_path)
 
     # Convert input_list to np.array
@@ -178,7 +178,7 @@ def predict(input_list):
         if len(X.shape) == 1:
             X = X.reshape(-1, 1)
             
-        model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), "trained_model"))
+        model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), "trained_model.keras"))
         return model.predict(X).tolist()
         
     except Exception as e:
